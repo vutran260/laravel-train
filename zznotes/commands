@@ -1,0 +1,29 @@
+# khoa hoc 3hours
+https://www.youtube.com/watch?v=iSsFV9hmxDk&t=205s
+
+// clear services and packages
+php artisan clear-compiled
+
+
+php artisan up // dang su dung, application is already up.
+php artisan down // maintenance mode
+
+php artisan env
+
+php artisan optimize // loai bo het cac loai caches
+php artisan cache:clear
+
+php artisan auth:clear-resets
+    // => Expired reset tokens cleared successfully.
+
+php artisan key:generate
+
+php artisan session:table
+    // => tao 1 table session.
+
+php artisan view:clear
+    // => refresh lai thay doi
+
+php artisan route:clear 
+    // => xoa cac route k can thiet.
+

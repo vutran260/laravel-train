@@ -1,0 +1,26 @@
+INSERT INTO categories(name, description)
+VALUES('Vietnam foods', 'This is Viet Nam foods');
+INSERT INTO categories(name, description)
+VALUES('Japanese foods', 'This is Japanese foods');
+INSERT INTO categories(name, description)
+VALUES('Chinese foods', 'This is Chinese foods');
+INSERT INTO categories(name, description)
+VALUES('Korean foods', 'This is Korean foods');
+
+
+INSERT INTO foods(name, count, category_id, description)
+VALUES('Banh beo', 50, 1, 'Banh beo chay ngon');
+INSERT INTO foods(name, count, category_id, description)
+VALUES('Banh xeo', 30, 1, 'Banh xeo chay Da Nang');
+INSERT INTO foods(name, count, category_id, description)
+VALUES('Com chay', 50, 1, 'Com chay VN ngon');
+
+INSERT INTO foods(name, count, category_id, description)
+VALUES('Canh rong bien', 20, 2, 'Canh rong bien JP');
+INSERT INTO foods(name, count, category_id, description)
+VALUES('Banh gao Nhat', 50, 2, 'Banh gao Nhat nhap khau');
+
+INSERT INTO foods(name, count, category_id, description)
+VALUES('Com chien Duong Chau', 50, 3, 'Com chien DC Trung Quoc');
+INSERT INTO foods(name, count, category_id, description)
+VALUES('Ha cao', 50, 3, 'Ha cao ngon Trung Quoc');
