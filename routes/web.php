@@ -1,14 +1,31 @@
 <?php
 
-use App\Http\Controllers\ProductController;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\FoodsController;
-use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Admin\ProductsController;
+use App\Http\Controllers\Admin\DashboardController;
 
+Route::get('/', [PagesController::class,'index'])->name('home');
+Route::get('/about', [PagesController::class,'about']);
 Route::get('/posts', [PostsController::class, 'index']);
 Route::resource('foods', FoodsController::class);
+
+// Admin login
+Route::get('/login', function() {
+    return view('/admin/login');
+});
+
+// Admin routes
+Route::middleware('auth.admin')->prefix('admin')->group(function () {
+    //dd('asdasdasd');
+    Route::get('/', [DashboardController::class, 'index']);
+    Route::resource('products', ProductsController::class)->middleware('auth.admin.product');
+});
+
 // Route::resource('/foods', [PostsController::class, 'index']);
 /*
 |--------------------------------------------------------------------------
@@ -49,10 +66,10 @@ Route::resource('foods', FoodsController::class);
 //     return view('home');
 // });
 
-Route::get('/products', [
-    ProductController::class,
-    'index'
-])->name('products');
+// Route::get('/products', [
+//     ProductController::class,
+//     'index'
+// ])->name('products');
 
 // How to validate "id only Interger" ?
 // Regular Expression
@@ -62,43 +79,18 @@ Route::get('/products', [
 // ])->where('id', '[0-9]+')  ;
 
 // Relug
-Route::get('products/{productName}/{id}', [
-    ProductController::class,
-    'detail'
-])->where( [
-    'productName' => '[a-zA-Z0-9]+',
-    'id' => '[0-9]+'
-]);
+// Route::get('products/{productName}/{id}', [
+//     ProductController::class,
+//     'detail'
+// ])->where( [
+//     'productName' => '[a-zA-Z0-9]+',
+//     'id' => '[0-9]+'
+// ]);
 
 // Route::get('products/{productName}', [
 //     ProductController::class,
 //     'detail'
 // ]);
-
-Route::get('/', [
-    PagesController::class,
-    'index'
-]);
-
-Route::get('/about', [
-    PagesController::class,
-    'about'
-]);
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 
