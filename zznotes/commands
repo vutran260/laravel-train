@@ -30,3 +30,5 @@ php artisan route:clear
 // 03-04-2023
 composer require laravel/ui
 php artisan ui:auth
+php artisan ui bootstrap
+npm install && npm run dev

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-sm bg-dark">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
       <!-- Links -->
       <ul class="navbar-nav">

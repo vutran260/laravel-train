@@ -1,3 +1,3 @@
-<div style="background-color: salmon; height:100px;">
-    <p>This is Footer, haha</p>
+<div style="background-color: #A0A0A0; height:100px;">
+    <p>Study laravel</p>
 </div>
