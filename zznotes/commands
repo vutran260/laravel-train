@@ -27,3 +27,6 @@ php artisan view:clear
 php artisan route:clear 
     // => xoa cac route k can thiet.
 
+// 03-04-2023
+composer require laravel/ui
+php artisan ui:auth
