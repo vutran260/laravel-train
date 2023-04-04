@@ -15,9 +15,9 @@ Route::get('/posts', [PostsController::class, 'index']);
 Route::resource('foods', FoodsController::class);
 
 // Admin login
-Route::get('/login', function() {
-    return view('/admin/login');
-});
+// Route::get('/login', function() {
+//     return view('/admin/login');
+// });
 
 // Admin routes
 Route::middleware('auth.admin')->prefix('admin')->group(function () {
