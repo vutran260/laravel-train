@@ -27,3 +27,7 @@ php artisan view:clear
 php artisan route:clear 
     // => xoa cac route k can thiet.
 
+composer require laravel/ui
+php artisan ui:auth
+php artisan ui bootstrap
+npm install && npm run dev

@@ -9,6 +9,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/posts', [PostsController::class, 'index']);
 Route::resource('foods', FoodsController::class);
+Route::get('/', [PagesController::class,'index']);
+Route::get('/about', [PagesController::class,'about']);
+Route::get('/products', [ProductController::class,'index'])->name('products');
+
 // Route::resource('/foods', [PostsController::class, 'index']);
 /*
 |--------------------------------------------------------------------------
@@ -49,10 +53,6 @@ Route::resource('foods', FoodsController::class);
 //     return view('home');
 // });
 
-Route::get('/products', [
-    ProductController::class,
-    'index'
-])->name('products');
 
 // How to validate "id only Interger" ?
 // Regular Expression
@@ -62,25 +62,19 @@ Route::get('/products', [
 // ])->where('id', '[0-9]+')  ;
 
 // Relug
-Route::get('products/{productName}/{id}', [
-    ProductController::class,
-    'detail'
-])->where( [
-    'productName' => '[a-zA-Z0-9]+',
-    'id' => '[0-9]+'
-]);
+// Route::get('products/{productName}/{id}', [
+//     ProductController::class,
+//     'detail'
+// ])->where( [
+//     'productName' => '[a-zA-Z0-9]+',
+//     'id' => '[0-9]+'
+// ]);
 
 // Route::get('products/{productName}', [
 //     ProductController::class,
 //     'detail'
 // ]);
 
-Route::get('/', [
-    PagesController::class,
-    'index'
-]);
 
-Route::get('/about', [
-    PagesController::class,
-    'about'
-]);
+Auth::routes();
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
