@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\Post;
 
 class PostsController extends Controller
 {
@@ -49,5 +50,17 @@ class PostsController extends Controller
         
 
         return view('posts.index');
+    }
+
+    // public function show($id) {
+    //     $post = Post::findOrFail($id);
+    //     return view('posts.index', compact('post'));
+    // }
+
+    public function show($id) {
+
+        $post = Post::all();
+        $this->authorize($post, 'view');
+        return view('posts.index', compact('post'));
     }
 }

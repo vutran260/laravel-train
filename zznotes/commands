@@ -31,3 +31,8 @@ composer require laravel/ui
 php artisan ui:auth
 php artisan ui bootstrap
 npm install && npm run dev
+
+
+php artisan make:auth
+# 05-04-2023
+php artisan make:policy PostPolicy -m Post

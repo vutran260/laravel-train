@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/posts', [PostsController::class, 'index']);
+//Route::get('/posts/{id}', [PostsController::class, 'show']);
 Route::resource('foods', FoodsController::class);
 Route::get('/', [PagesController::class,'index']);
 Route::get('/about', [PagesController::class,'about']);
@@ -77,4 +78,5 @@ Route::get('/products', [ProductController::class,'index'])->name('products');
 
 
 Auth::routes();
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])
+->name('home');
